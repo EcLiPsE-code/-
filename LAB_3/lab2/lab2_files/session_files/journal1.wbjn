@@ -1,0 +1,93 @@
+# encoding: utf-8
+# Release 19.2
+SetScriptVersion(Version="19.2.120")
+template1 = GetTemplate(
+    TemplateName="Design Assessment",
+    Solver="ANSYS")
+system1 = template1.CreateSystem()
+system1.Delete()
+template2 = GetTemplate(TemplateName="Mechanical APDL")
+system2 = template2.CreateSystem()
+system2.Delete()
+template3 = GetTemplate(
+    TemplateName="Transient Thermal",
+    Solver="ANSYS")
+system3 = template3.CreateSystem()
+system3.Delete()
+template4 = GetTemplate(TemplateName="Mechanical Model")
+system4 = template4.CreateSystem()
+system5 = template2.CreateSystem(
+    Position="Below",
+    RelativeTo=system4)
+system5.Delete()
+system4.Delete()
+template5 = GetTemplate(
+    TemplateName="Steady-State Thermal",
+    Solver="ANSYS")
+system6 = template5.CreateSystem()
+geometry1 = system6.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+Save(Overwrite=True)
+modelComponent1 = system6.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system6.GetContainer(ComponentName="Model")
+model1.Edit()
+favorites1 = EngData.LoadFavoriteItems()
+library1 = EngData.OpenLibrary(
+    Name="General Materials",
+    Source="General_Materials.xml")
+library2 = EngData.OpenLibrary(
+    Name="Granta Design Sample Materials",
+    Source="Granta_Design_Typical_Materials.xml")
+engineeringData1 = system6.GetContainer(ComponentName="Engineering Data")
+matl1 = engineeringData1.ImportMaterial(
+    Name="Brass, cast",
+    Source="Granta_Design_Typical_Materials.xml")
+library3 = EngData.OpenLibrary(
+    Name="Geomechanical Materials",
+    Source="GeoMechanical_Materials.xml")
+library4 = EngData.OpenLibrary(
+    Name="Additive Manufacturing Materials",
+    Source="Additive_Manufacturing_Materials.xml")
+library5 = EngData.OpenLibrary(
+    Name="General Non-linear Materials",
+    Source="General Materials Non-linear.xml")
+library6 = EngData.OpenLibrary(
+    Name="Explicit Materials",
+    Source="Explicit_Materials.xml")
+library7 = EngData.OpenLibrary(
+    Name="Hyperelastic Materials",
+    Source="Hyperelastic_Materials.xml")
+library8 = EngData.OpenLibrary(
+    Name="Magnetic B-H Curves",
+    Source="Magnetic_B-H_curves_Soft_Materials.xml")
+library9 = EngData.OpenLibrary(
+    Name="Thermal Materials",
+    Source="Thermal_Materials.xml")
+system7 = template5.CreateSystem(
+    Position="Right",
+    RelativeTo=system6)
+geometry1.Exit()
+model1.Exit()
+engineeringData2 = system7.GetContainer(ComponentName="Engineering Data")
+matl2 = engineeringData2.ImportMaterial(
+    Name="Brass",
+    Source="Thermal_Materials.xml")
+material1 = engineeringData2.GetMaterial(Name="Structural Steel")
+material1.SetColor(
+    Red=0,
+    Green=163,
+    Blue=178)
+matl2.SetColor(
+    Red=234,
+    Green=215,
+    Blue=0)
+geometry2 = system7.GetContainer(ComponentName="Geometry")
+geometry2.Edit(IsSpaceClaimGeometry=True)
+geometry2.Edit()
+modelComponent2 = system7.GetComponent(Name="Model")
+modelComponent2.Refresh()
+model2 = system7.GetContainer(ComponentName="Model")
+model2.Edit()
+system6.Delete()
+Save(Overwrite=True)

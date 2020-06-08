@@ -1,0 +1,31 @@
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       23:55:25
+
+ *** WARNING ***                         CP =       2.453   TIME= 23:55:30
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       2.672   TIME= 23:55:30
+ Material number 5 (used by element 46967) should normally have at least 
+ one MP or one TB type command associated with it.  Output of energy by  
+ material may not be available.                                          
+
+ *** WARNING ***                         CP =       2.938   TIME= 23:55:31
+ Maximum contact stiffness 1.6E+16 is too big which can cause an         
+ accuracy problem, you may scale the force units in the model.           
+
+ *** WARNING ***                         CP =      10.234   TIME= 23:55:53
+ The Distributed Sparse Matrix Solver is currently running in the        
+ out-of-core memory mode.  This memory mode may provide significantly    
+ worse performance compared to the in-core memory mode, depending on     
+ the amount of available system memory and I/O speed.  Please monitor    
+ the solver performance to ensure that the large amount of I/O to the    
+ solver files does not create a bottleneck for performance.              
+
+ *** WARNING ***                         CP =      40.812   TIME= 23:58:59
+ During this session the elapsed time exceeds the CPU time by 451%.      
+ Often this indicates either a lack of physical memory (RAM) required    
+ to efficiently handle this simulation or it indicates a particularly    
+ slow hard drive configuration.  This simulation can be expected to run  
+ faster on identical hardware if additional RAM or a faster hard drive   
+ configuration is made available.  For more details, please see the      
+ ANSYS Performance Guide which is part of the ANSYS Help system.         

@@ -1,0 +1,10 @@
+/COM,ANSYS RELEASE Release 19.2      BUILD 19.2      UP20180808       15:31:29
+
+ *** WARNING ***                         CP =       0.828   TIME= 15:31:32
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** WARNING ***                         CP =       0.828   TIME= 15:31:32
+ Material number 5 (used by element 1133) should normally have at least  
+ one MP or one TB type command associated with it.  Output of energy by  
+ material may not be available.                                          

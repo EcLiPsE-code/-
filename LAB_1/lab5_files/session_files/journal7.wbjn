@@ -1,0 +1,45 @@
+# encoding: utf-8
+# Release 19.2
+SetScriptVersion(Version="19.2.120")
+system1 = GetSystem(Name="SYS 1")
+model1 = system1.GetContainer(ComponentName="Model")
+model1.Edit()
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+geometry1.Exit()
+model1.Exit()
+Save(Overwrite=True)
+Save(Overwrite=True)
+template1 = GetTemplate(
+    TemplateName="Modal",
+    Solver="ANSYS")
+system2 = template1.CreateSystem(
+    Position="Right",
+    RelativeTo=system1)
+geometryComponent1 = system2.GetComponent(Name="Geometry")
+geometryComponent2 = system1.GetComponent(Name="Geometry")
+geometryComponent1.ReplaceWithShare(
+    TargetSystem=system2,
+    ComponentToShare=geometryComponent2,
+    SourceSystem=system1)
+engineeringDataComponent1 = system2.GetComponent(Name="Engineering Data")
+engineeringDataComponent2 = system1.GetComponent(Name="Engineering Data")
+engineeringDataComponent1.ReplaceWithShare(
+    TargetSystem=system2,
+    ComponentToShare=engineeringDataComponent2,
+    SourceSystem=system1)
+modelComponent1 = system2.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model2 = system2.GetContainer(ComponentName="Model")
+model2.Edit()
+model1.Edit()
+model2.Exit()
+model1.Exit()
+Save(Overwrite=True)
+system2.Delete()
+Save(Overwrite=True)
+Reset()
+Extensions.UnloadExtension(
+    Id="5e7e01a6-8601-11e8-9f8c-28f10e13ffe6",
+    Version="1.3",
+    Format="Binary")

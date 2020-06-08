@@ -1,0 +1,13 @@
+# encoding: utf-8
+# Release 19.2
+SetScriptVersion(Version="19.2.120")
+system1 = GetSystem(Name="CFX")
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+system2 = GetSystem(Name="SYS")
+modelComponent1 = system2.GetComponent(Name="Model")
+modelComponent1.Refresh()
+model1 = system2.GetContainer(ComponentName="Model")
+model1.Edit()
+Save(Overwrite=True)
+Open(FilePath="F:/Learning/6 семестр/КСКР/LAB_1/lab1_version1.wbpj")

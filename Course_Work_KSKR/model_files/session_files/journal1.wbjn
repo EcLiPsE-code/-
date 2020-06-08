@@ -1,0 +1,11 @@
+# encoding: utf-8
+# Release 19.2
+SetScriptVersion(Version="19.2.120")
+template1 = GetTemplate(
+    TemplateName="Fluid Flow",
+    Solver="CFX")
+system1 = template1.CreateSystem()
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit(IsSpaceClaimGeometry=True)
+geometry1.Edit()
+Save(Overwrite=True)

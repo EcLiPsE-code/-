@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DARoot ObjId ="1" Type="CAERep" Ver="2">
+  <Attributes ObjId="2" Type="CAERepBase" Ver="2">
+	<DAAttribute ObjId="10" Type="DAAttribute" Ver="2">
+      <AttributeName PropType="string">Displacement</AttributeName>
+      <AttributeType PropType="string">DropDown</AttributeType>
+      <Application PropType="string">All</Application>
+      <Validation PropType="vector&lt;string>">UX,UY,UZ,USUM,UVECTORS</Validation>
+      <Default PropType="string">USUM</Default>
+    </DAAttribute>
+    <DAAttribute ObjId="11" Type="DAAttribute" Ver="2">
+      <AttributeName PropType="string">Stress</AttributeName>
+      <AttributeType PropType="string">DropDown</AttributeType>
+      <Application PropType="string">All</Application>
+      <Validation PropType="vector&lt;string>">SX,SY,SZ,SXY,SYZ,SXZ,S1,S2,S3,SEQV,SINT,SVECTORS</Validation>
+      <Default PropType="string">SEQV</Default>
+    </DAAttribute>
+	<DAAttribute ObjId="12" Type="DAAttribute" Ver="2">
+      <AttributeName PropType="string">Strain</AttributeName>
+      <AttributeType PropType="string">DropDown</AttributeType>
+      <Application PropType="string">All</Application>
+      <Validation PropType="vector&lt;string>">EPELX,EPELY,EPELZ,EPELXY,EPELYZ,EPELXZ,EPEL1,EPEL2,EPEL3,EPELEQV_RST,EPELINT,EPELVECTORS</Validation>
+      <Default PropType="string">EPELX</Default>
+    </DAAttribute>
+    <DAAttribute ObjId="101" Type="DAAttribute" Ver="2">
+      <AttributeName PropType="string">Expression</AttributeName>
+      <AttributeType PropType="string">Text</AttributeType>
+      <Application PropType="string">All</Application>
+      <Validation PropType="vector&lt;string>">30</Validation>
+      <Default PropType="string">SEQV</Default>
+    </DAAttribute>
+    <DAAttribute ObjId="102" Type="DAAttribute" Ver="2">
+      <AttributeName PropType="string">Output Units</AttributeName>
+      <AttributeType PropType="string">DropDown</AttributeType>
+      <Application PropType="string">All</Application>
+      <Validation PropType="vector&lt;string>">Stress,Strain,Distance,Volume,Velocity,Acceleration,Force,Temperature,Energy,Angle,No Units</Validation>
+      <Default PropType="string">Stress</Default>
+    </DAAttribute>
+	<DAAttribute ObjId="103" Type="DAAttribute" Ver="2">
+      <AttributeName PropType="string">Solutions (By Row Number)</AttributeName>
+      <AttributeType PropType="string">Text</AttributeType>
+      <Application PropType="string">All</Application>
+      <Validation PropType="vector&lt;string>">100</Validation>
+      <Default PropType="string">All</Default>
+    </DAAttribute>
+	<DAAttribute ObjId="106" Type="DAAttribute" Ver="2">
+      <AttributeName PropType="string">Display Type</AttributeName>
+      <AttributeType PropType="string">DropDown</AttributeType>
+      <Application PropType="string">All</Application>
+      <Validation PropType="vector&lt;string>">Elemental,Nodal</Validation>
+      <Default PropType="string">Nodal</Default>
+    </DAAttribute>
+  </Attributes>
+  <DAScripts ObjId="4" Type="DAScripts" Ver="2">
+    <Solve PropType="string">%DANSYSDIR%/aisol/DesignSpace/DSPages/scripts/Combination_solve.py</Solve>
+    <Evaluate PropType="string">%DANSYSDIR%/aisol/DesignSpace/DSPages/scripts/Combination_evaluate.py</Evaluate>
+    <DAData PropType="int">1</DAData> 
+    <CombResults PropType="int">1</CombResults> 
+    <SelectionExtra PropType="vector&lt;string>"></SelectionExtra>
+ </DAScripts>
+  <Results ObjId="5" Type="CAERepBase" Ver="2">
+	<DAResult ObjId ="1000"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Displacement Result</GroupType>
+      <GroupSubtype PropType="string">SRSS Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">10,103</AttributeIDs>
+      <DisplayUnits PropType="string">Distance</DisplayUnits>
+    </DAResult>
+	<DAResult ObjId ="1001"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Displacement Result</GroupType>
+      <GroupSubtype PropType="string">Mean Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">10,103</AttributeIDs>
+      <DisplayUnits PropType="string">Distance</DisplayUnits>
+    </DAResult>
+	<DAResult ObjId ="1002"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Displacement Result</GroupType>
+      <GroupSubtype PropType="string">Max Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">10,103</AttributeIDs>
+      <DisplayUnits PropType="string">Distance</DisplayUnits>
+    </DAResult>	
+    <DAResult ObjId ="1003"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Displacement Result</GroupType>
+      <GroupSubtype PropType="string">Min Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">10,103</AttributeIDs>
+      <DisplayUnits PropType="string">Distance</DisplayUnits>
+    </DAResult>
+	<DAResult ObjId ="1004"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Displacement Result</GroupType>
+      <GroupSubtype PropType="string">Absolute Max</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">10,103</AttributeIDs>
+      <DisplayUnits PropType="string">Distance</DisplayUnits>
+    </DAResult>		
+	<DAResult ObjId ="1005"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Displacement Result</GroupType>
+      <GroupSubtype PropType="string">Absolute Min</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">10,103</AttributeIDs>
+      <DisplayUnits PropType="string">Distance</DisplayUnits>
+    </DAResult>
+	<DAResult ObjId ="1006"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Displacement Result</GroupType>
+      <GroupSubtype PropType="string">Sum Results</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">10,103</AttributeIDs>
+      <DisplayUnits PropType="string">Distance</DisplayUnits>
+    </DAResult>	
+	<DAResult ObjId ="1007"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Displacement Result</GroupType>
+      <GroupSubtype PropType="string">Subtract Results</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">10,103</AttributeIDs>
+      <DisplayUnits PropType="string">Distance</DisplayUnits>
+	  </DAResult>
+	<DAResult ObjId ="1100"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Stress Result</GroupType>
+      <GroupSubtype PropType="string">SRSS Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">11,103</AttributeIDs>
+      <DisplayUnits PropType="string">Stress</DisplayUnits>
+    </DAResult>
+	<DAResult ObjId ="1101"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Stress Result</GroupType>
+      <GroupSubtype PropType="string">Mean Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">11,103</AttributeIDs>
+      <DisplayUnits PropType="string">Stress</DisplayUnits>
+    </DAResult>
+	<DAResult ObjId ="1102"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Stress Result</GroupType>
+      <GroupSubtype PropType="string">Max Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">11,103</AttributeIDs>
+      <DisplayUnits PropType="string">Stress</DisplayUnits>
+    </DAResult>	
+    <DAResult ObjId ="1103"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Stress Result</GroupType>
+      <GroupSubtype PropType="string">Min Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">11,103</AttributeIDs>
+      <DisplayUnits PropType="string">Stress</DisplayUnits>
+    </DAResult>
+	<DAResult ObjId ="1104"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Stress Result</GroupType>
+      <GroupSubtype PropType="string">Absolute Max</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">11,103</AttributeIDs>
+      <DisplayUnits PropType="string">Stress</DisplayUnits>
+    </DAResult>		
+	<DAResult ObjId ="1105"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Stress Result</GroupType>
+      <GroupSubtype PropType="string">Absolute Min</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">11,103</AttributeIDs>
+      <DisplayUnits PropType="string">Stress</DisplayUnits>
+    </DAResult>
+	<DAResult ObjId ="1106"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Stress Result</GroupType>
+      <GroupSubtype PropType="string">Sum Results</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">11,103</AttributeIDs>
+      <DisplayUnits PropType="string">Stress</DisplayUnits>
+    </DAResult>	
+	<DAResult ObjId ="1107"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Stress Result</GroupType>
+      <GroupSubtype PropType="string">Subtract Results</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">11,103</AttributeIDs>
+      <DisplayUnits PropType="string">Stress</DisplayUnits>
+	  </DAResult>
+	<DAResult ObjId ="1200"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Strain Result</GroupType>
+      <GroupSubtype PropType="string">SRSS Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">12,103</AttributeIDs>
+      <DisplayUnits PropType="string">Strain</DisplayUnits>
+    </DAResult>
+	<DAResult ObjId ="1201"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Strain Result</GroupType>
+      <GroupSubtype PropType="string">Mean Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">12,103</AttributeIDs>
+      <DisplayUnits PropType="string">Strain</DisplayUnits>
+    </DAResult>
+	<DAResult ObjId ="1202"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Strain Result</GroupType>
+      <GroupSubtype PropType="string">Max Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">12,103</AttributeIDs>
+      <DisplayUnits PropType="string">Strain</DisplayUnits>
+    </DAResult>	
+    <DAResult ObjId ="1203"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Strain Result</GroupType>
+      <GroupSubtype PropType="string">Min Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">12,103</AttributeIDs>
+      <DisplayUnits PropType="string">Strain</DisplayUnits>
+    </DAResult>
+	<DAResult ObjId ="1204"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Strain Result</GroupType>
+      <GroupSubtype PropType="string">Absolute Max</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">12,103</AttributeIDs>
+      <DisplayUnits PropType="string">Strain</DisplayUnits>
+    </DAResult>		
+	<DAResult ObjId ="1205"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Strain Result</GroupType>
+      <GroupSubtype PropType="string">Absolute Min</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">12,103</AttributeIDs>
+      <DisplayUnits PropType="string">Strain</DisplayUnits>
+    </DAResult>
+	<DAResult ObjId ="1206"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Strain Result</GroupType>
+      <GroupSubtype PropType="string">Sum Results</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">12,103</AttributeIDs>
+      <DisplayUnits PropType="string">Strain</DisplayUnits>
+    </DAResult>	
+	<DAResult ObjId ="1207"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Strain Result</GroupType>
+      <GroupSubtype PropType="string">Subtract Results</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">12,103</AttributeIDs>
+      <DisplayUnits PropType="string">Strain</DisplayUnits>
+	  </DAResult>
+	<DAResult ObjId ="1300"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Expression-Based</GroupType>
+      <GroupSubtype PropType="string">SRSS Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">101,102,103</AttributeIDs>
+    </DAResult>
+	<DAResult ObjId ="1301"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Expression-Based</GroupType>
+      <GroupSubtype PropType="string">Mean Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">101,102,103</AttributeIDs>
+    </DAResult>
+	<DAResult ObjId ="1302"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Expression-Based</GroupType>
+      <GroupSubtype PropType="string">Max Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">101,102,103</AttributeIDs>      
+    </DAResult>	
+    <DAResult ObjId ="1303"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Expression-Based</GroupType>
+      <GroupSubtype PropType="string">Min Result</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">101,102,103</AttributeIDs>      
+    </DAResult>
+	<DAResult ObjId ="1304"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Expression-Based</GroupType>
+      <GroupSubtype PropType="string">Absolute Max</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">101,102,103</AttributeIDs>      
+    </DAResult>		
+	<DAResult ObjId ="1305"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Expression-Based</GroupType>
+      <GroupSubtype PropType="string">Absolute Min</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">101,102,103</AttributeIDs>      
+    </DAResult>
+	<DAResult ObjId ="1306"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Expression-Based</GroupType>
+      <GroupSubtype PropType="string">Sum Results</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">101,102,103</AttributeIDs>      
+    </DAResult>	
+	<DAResult ObjId ="1307"  Type="DAResult" Ver="2">
+      <GroupType PropType="string">Expression-Based</GroupType>
+      <GroupSubtype PropType="string">Subtract Results</GroupSubtype>
+      <AttributeIDs PropType="vector&lt;unsigned int>">101,102,103</AttributeIDs>      
+	</DAResult>
+  </Results>
+</DARoot>
+
